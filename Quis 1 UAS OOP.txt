@@ -1,0 +1,46 @@
+Tugas UAS OOP
+
+Nama	:Melia Rosario Naimnule
+NIM	:2201010527
+
+ide project aplikasi yang saya ambil adalah : Aplikasi List Drama Korea
+
+aplikasi list drama korea ini merupakan sebuah aplikasi yang saya buat untuk membantu saya dalam mencatat dan memberikan rating pada drama yang sudah saya tonton, ini juga membantu saya untuk mengingat seberapa bagus drama tersebut sehingga ketika teman atau siapa pun yang bertanya tentang drama kepada saya, saya sudah tau drama korea mana yang akan saya berikan kepada teman saya dengan melihat rating sudah saya berikan pada aplikasi tersebut
+
+penjelasan teori yang saya gunakan:
+1. Access modifier saya gunakan untuk mengontrol siapa saja yang bisa melihat atau mengubah data di dalam program tersebut. Misalnya, variabel connection dan model menggunakan access modifier private. Ini artinya, hanya kode di dalam kelas tersebut yang bisa langsung mengakses dan mengubah nilai-nilai variabel tersebut.
+contoh sintaknya :
+public class DramaList extends javax.swing.JFrame {
+
+    private Connection connection; // private access modifier
+    private DefaultTableModel model; // private access modifier
+        
+    /**
+     * Creates new form DramaList
+     */
+    public DramaList() {
+        initComponents();
+        connection = koneksi.buatKoneksi(); // Menggunakan koneksi dari kelas koneksi
+        model = new DefaultTableModel();
+        jTable1.setModel(model);
+        listData();
+    }
+
+    // ...
+}
+
+2. Inheritance adalah cara untuk mengambil karakteristik dari satu kelas yang sudah ada dan membuat kelas baru yang berdasarkan pada itu. Dalam konteks aplikasi ini, misalnya, jika ada kelas utama yang disebut Drama, Anda bisa membuat kelas tambahan seperti DramaKorea sebagai turunannya. Dengan inheritance, DramaKorea akan secara otomatis mewarisi semua fitur dan kemampuan yang sudah ada di kelas Drama. Ini sangat membantu karena Anda tidak perlu menulis ulang kode yang sama untuk setiap jenis drama yang berbeda, seperti drama Korea, sehingga lebih efisien dan terorganisir.
+
+3. Polymorphism untuk menggunakan method yang sama dengan cara yang seragam untuk objek dari kelas-kelas yang berbeda. Dalam konteks aplikasi ini, method `btnSIMPANActionPerformed` menunjukkan contoh penggunaan polymorphism dengan menerima event `ActionEvent` dari tombol `btnSIMPAN`. Ini artinya, method ini dapat dijalankan ketika tombol simpan diklik. 
+dengan contoh sintak :
+private void btnSIMPANActionPerformed(java.awt.event.ActionEvent evt) {                                          
+    simpanData();
+}  
+
+4. Encapsulation adalah cara untuk menjaga data dan cara kerja dengan data dalam satu tempat, yaitu dalam sebuah kelas. Dalam aplikasi Anda, ini dilakukan dengan menggunakan method seperti txJUDUL.getText() untuk mengambil data (misalnya, judul drama) dan method lain untuk mengubahnya.
+contoh sintaknya :
+private void btnSIMPANActionPerformed(java.awt.event.ActionEvent evt) {                                          
+    String judul = txJUDUL.getText(); // Menggunakan getter untuk mendapatkan nilai dari JTextField
+    // ... kode lainnya
+}
+
